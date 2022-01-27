@@ -1,0 +1,56 @@
+<html lang="en">
+    {% extends 'news/base.html' %}
+<head>
+    
+</head>
+<body>
+    {% block content %}
+     <!--==========================
+      F.A.Q Section
+    ============================-->
+    <section id="faq" class="wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>News Updates </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                {% for x in news_update %}
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq{{x.id}}">{{x.heading}} <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq{{x.id}}" class="collapse" data-parent="#faq-list">
+                    <p>
+                      <a href="{% url 'detail_news' x.id %}">{{x.news_details|slice:"0:200"}}........</a>
+                      
+                    </p>
+                  </div>
+                </li>
+      
+                {% endfor %}
+      
+                
+      
+               
+      
+                
+      
+                
+      
+              </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+      {% endblock %}
+    
+</body>
+</html>

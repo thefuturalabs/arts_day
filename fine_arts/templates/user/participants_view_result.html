@@ -1,0 +1,123 @@
+<html lang="en">
+    {% extends 'user/base.html' %}
+<head>
+    
+</head>
+<body>
+    {% block content %}
+    <section id="contact" class="section-bg wow fadeInUp">
+
+        <div class="container">
+  
+          <div class="section-header">
+            <h2>View Results</h2>
+            <p>You can view the results</p>
+          </div>
+  
+          
+  
+          <div class="form">
+            
+            <form action="" method="POST" role="form" class="contactForm" >
+              {% csrf_token %}
+
+              
+              
+
+
+              <div class="form-row" style="margin-left: 30%;">
+                <div class="form-group col-md-6">
+                  <select class="form-control" name="event" id="" required>
+                    <option value="">Select Event</option>
+                    {% for x in off_stage_details %}
+                    <option value="{{x.event_name}}">{{x.event_name}}</option>
+                    {% endfor %}
+                    {% for y in on_stage_details %}
+                    <option value="{{y.event_name}}">{{y.event_name}}</option>
+                    {% endfor %}
+                    
+                    
+                  </select>
+                  
+                </div>
+                
+              </div>
+              
+              
+              
+              
+              
+              <div class="text-center"><button type="submit">View Results</button></div>
+            </form>
+          </div>
+
+          <div >
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li >
+                            <div style=" font-size:25px;">
+        
+                                <h2>{{ message }}  </h2>
+
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                        
+                                        
+                                        
+                                        <th>Participant Name</th>
+                                        <th>Position</th>
+                                        <th>Group</th>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                          
+                                  
+                                   <tr>
+                                    
+                                      {% for x in results %}
+                                       <td>{{x.name}}</td>
+                                       <td>{{x.position}}</td>
+                                       <td>{{x.group}}</td>
+
+                                       {% endfor %}
+
+                                    
+                                       
+                                       
+                                       
+                                       
+                                   </tr>
+                                  
+                                  
+                                  
+                                 
+                                   
+                                  
+                               </tbody>
+                                
+                                </table>
+                                
+
+
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+  
+        </div>
+      </section><!-- #contact -->
+
+      {% endblock %}
+    
+</body>
+</html>

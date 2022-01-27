@@ -1,0 +1,61 @@
+<html lang="en">
+    {% extends 'news/base.html' %}
+<head>
+    
+</head>
+<body>
+    {% block content %}
+    <section id="contact" class="section-bg wow fadeInUp">
+
+        <div class="container">
+  
+          <div class="section-header">
+            <h2>Update Program </h2>
+            <p>You can telecast the program here.</p>
+          </div>
+  
+          
+  
+          <div class="form">
+            
+            <form action="" method="POST" role="form" class="contactForm" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" name="reporter_name" class="form-control"  placeholder="Your Name" required />
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" name="channel_name"  placeholder="Your News Channel Name"  required />
+                  
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="heading"  placeholder="Type video Heading"  required />
+                
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label >Video Footage</label>
+                  <input type="file" name="video1" class="form-control"   required />
+                  
+                </div>
+               
+              </div>
+              
+              
+              <div class="form-group">
+                <textarea class="form-control" name="video_details" rows="5"  placeholder="Video Details" required></textarea>
+                
+              </div>
+              <div class="text-center"><button type="submit">Update</button></div>
+            </form>
+          </div>
+  
+        </div>
+      </section><!-- #contact -->
+
+      {% endblock %}
+    
+</body>
+</html>

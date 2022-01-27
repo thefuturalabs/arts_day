@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% extends 'admin/admin_homepage.html' %}
+<html lang="en">
+
+<head>
+
+   
+
+</head>
+
+<body id="page-top">
+
+   
+    {% block content %}
+
+                   
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                       
+                        
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Off Stage Participants </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Sl No</th>
+                                                <th>Participant Name</th>
+                                                <th>Group</th>
+                                                <th>Event</th>
+                                                
+                                                <th>Action</th>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            
+                                           {% for x in off_stage_participants_details %}
+                                            <tr>
+                                                <td>{{forloop.counter|add:0}}</td>
+                                                <td>{{x.participant_name}}</td>
+                                                <td>{{x.group}}</td>
+                                                <td>{{x.event}}</td>
+                                                <form action="" method="POST">
+
+                                                    {% csrf_token %}
+                                               
+                                                <td><button type="submit"  onclick="return show_alert()" class="btn btn-danger" name="id" value="{{x.id}}">Remove</button> </td>
+                                            </form>
+                                            </tr>
+                                           {% endfor %}
+                                           
+                                           
+                                           
+                                          
+                                            
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                       
+                       
+                       
+                       
+                       
+                        
+                        
+                        
+                       
+                        
+                        
+                        
+                        
+                        
+
+
+
+                        
+                        
+
+                        
+
+                       
+                    </div>
+
+                    <script>
+                        function show_alert() {
+                            if(!confirm("Do you really want to remove it?")) {
+                              return false;
+                            }
+                            this.form.submit();
+                          }
+                    </script>
+
+                    
+
+                   
+
+           {% endblock %}     
+
+  
+
+   
+
+    
+
+    
+
+</body>
+
+</html>

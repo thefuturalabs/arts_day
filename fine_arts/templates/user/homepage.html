@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>Fine Arts Home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static "lib/bootstrap/css/bootstrap.min.css"%}"" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "lib/font-awesome/css/font-awesome.min.css"%}"" rel="stylesheet">
+  <link href="{% static "lib/animate/animate.min.css"%}"" rel="stylesheet">
+  <link href="{% static "lib/venobox/venobox.css"%}"" rel="stylesheet">
+  <link href="{% static "lib/owlcarousel/assets/owl.carousel.min.css"%}"" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static "css/style.css"%}"" rel="stylesheet">
+
+  
+  
+
+  <!-- =======================================================
+    Theme Name: TheEvent
+    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+         <h1><a href="#intro">A<span>R</span>TS</a></h1>
+        
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#hotels">Score Board</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#faq">News</a></li>
+          
+         
+          <li><a href="{% url 'sign_in_display' %}">Sign In</a></li>
+          <li class="buy-tickets"><a href="{% url 'program_view' %}">Watch</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  
+  <section id="intro">
+    
+    
+    <div class="intro-container wow fadeIn">
+
+      <video autoplay muted loop id="myVideo">
+        <source src="{% static "video/trim1.mp4"%}"" type="video/mp4">
+          
+      </video>
+      
+      <h1 class="mb-4 pb-0">The Biggest<br><span>Event</span> Ever</h1>
+      <p class="mb-4 pb-0">10-12 April,College </p>
+
+
+      
+    
+      
+
+      
+      <a href="#about" class="about-btn scrollto">About The Event</a>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>About The Event</h2>
+            <p>Arts is a festival unique in its structure and organisation. The organisational set up on various level  for the conduct of the event is monitored by  Department authorities as per the manual drafted by experts in the field. Looking back into the history of the event in the last  years it is seen that the event has refined much in letter and spirit Students get opportunity to express their talent in different levels.  </p>
+          </div>
+          <div class="col-lg-3">
+            <h3>Where</h3>
+            <p>College</p>
+          </div>
+          <div class="col-lg-3">
+            <h3>When</h3>
+            <p>Saturday to Monday<br>10-12 April</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+      Hotels Section
+    ============================-->
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Score Board</h2>
+          <p> Here is the total score group wise.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 1</a></h3>
+              
+              <p>{{score.group1_score}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 2</a></h3>
+              
+              <p>{{score.group2_score}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 3</a></h3>
+              
+              <p>{{score.group3_score}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 4</a></h3>
+              
+              <p>{{score.group4_score}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 5</a></h3>
+              
+              <p>{{score.group5_score}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              
+              <h3><a href="#">Group 6</a></h3>
+              
+              <p>{{score.group6_score}}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    
+    
+
+    
+
+    <!--==========================
+      Schedule Section
+    ============================-->
+    <section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Event Schedule</h2>
+          <p>Here is our event schedule</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+          </li>
+        </ul>
+
+        <h3 class="sub-heading">The schedule of entire event will be available here.</h3>
+
+        <div class="tab-content row justify-content-center">
+
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+            {% for x in off_stage_items_day1 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.venue}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            {% for x in on_stage_items_day1 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.stage}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+
+          </div>
+          <!-- End Schdule Day 1 -->
+
+          <!-- Schdule Day 2 -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+            {% for x in off_stage_items_day2 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.venue}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            
+            {% for x in on_stage_items_day2 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.stage}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            
+
+            
+
+          </div>
+          <!-- End Schdule Day 2 -->
+
+          <!-- Schdule Day 3 -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+
+            {% for x in off_stage_items_day3 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.venue}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            {% for x in on_stage_items_day3 %}
+            <div class="row schedule-item">
+              <div class="col-md-2"><p><time>{{x.event_start_time}}</time></p> 
+                <p>to</p>
+                <p><time>{{x.event_end_time}}</time></p>
+                <p><h4>{{x.stage}}</h4></p> 
+              </div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{x.image1.url}}"" alt="event">
+                </div>
+                <h4>{{x.event_name}}. </h4>
+                
+                <p>{{x.event_details}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            
+
+            
+
+            
+
+           
+
+          </div>
+          <!-- End Schdule Day 2 -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Venue Section
+    ============================-->
+    <section id="venue" class="wow fadeInUp">
+
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h2>Event Venue</h2>
+          <p>Event venue location info and gallery</p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 venue-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31236.411035341807!2d75.35235327082655!3d11.866643811587348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba422b9b2aca753%3A0x380605a11ce24f6c!2sKannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1613634786362!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+            
+          </div>
+
+          <div class="col-lg-6 venue-info">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-8">
+                <h3>Stages, College</h3>
+                <p>The Events are conducted in different stages around the</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-fluid venue-gallery-container">
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="{% static "img/venue-gallery/1.jpg"%}"" class="venobox" data-gall="venue-gallery">
+                <img src="{% static "img/venue-gallery/1.jpg"%}"" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="{% static "img/venue-gallery/8.jpg"%}"" class="venobox" data-gall="venue-gallery">
+                <img src="{% static "img/venue-gallery/8.jpg"%}"" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="{% static "img/venue-gallery/2.jpg"%}"" class="venobox" data-gall="venue-gallery">
+                <img src="{% static "img/venue-gallery/2.jpg"%}"" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="{% static "img/venue-gallery/8.jpg"%}"" class="venobox" data-gall="venue-gallery">
+                <img src="{% static "img/venue-gallery/8.jpg"%}"" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    
+
+    
+    
+
+    <!--==========================
+      Sponsors Section
+    ============================-->
+    <section id="supporters" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Events</h2>
+          <h4>There will be both off stage and on stage items for the students. We organise more 150+ items.</h4>
+
+          
+        </div>
+
+        <div class="row no-gutters supporters-wrap clearfix">
+          
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image1.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image2.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image3.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image4.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image5.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image6.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image7.url}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="{{images_uploads.image8.url}}" class="img-fluid" alt="">
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      F.A.Q Section
+    ============================-->
+    <section id="faq" class="wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>News Updates </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                {% for x in news_updates %}
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq{{x.id}}">{{x.heading}} <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq{{x.id}}" class="collapse" data-parent="#faq-list">
+                    <p>
+                      <a href="{% url 'detail_news_user' x.id %}">{{x.news_details|slice:"0:200"}}........</a>
+                    </p>
+                  </div>
+                </li>
+      
+                {% endfor %}
+      
+                
+      
+               
+      
+                
+      
+                
+      
+              </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Subscribe Section
+    ============================-->
+    
+
+    
+
+
+  </main>
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <div id="logo" class="pull-left">
+              <!-- Uncomment below if you prefer to use a text logo -->
+               <h1><a href="#intro">A<span>R</span>TS</a></h1>
+              <p>Arts is a festival unique in its structure and organisation. The organisational set up on various level for the conduct of the event is monitored by Department authorities as per the manual drafted by experts in the field. </p>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#">College Website</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Union</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Arts Club <br>
+              College Union<br>
+              
+              <strong>Phone:</strong> +91 8564103020<br>
+              <strong>Email:</strong> info_college_union@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>ARTS</strong>. All Rights Reserved
+      </div>
+     
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static "lib/jquery/jquery.min.js"%}""></script>
+  <script src="{% static "lib/jquery/jquery-migrate.min.js"%}""></script>
+  <script src="{% static "lib/bootstrap/js/bootstrap.bundle.min.js"%}""></script>
+  <script src="{% static "lib/easing/easing.min.js"%}""></script>
+  <script src="{% static "lib/superfish/hoverIntent.js"%}""></script>
+  <script src="{% static "lib/superfish/superfish.min.js"%}""></script>
+  <script src="{% static "lib/wow/wow.min.js"%}""></script>
+  <script src="{% static "lib/venobox/venobox.min.js"%}""></script>
+  <script src="{% static "lib/owlcarousel/owl.carousel.min.js"%}""></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static "contactform/contactform.js"%}""></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static "js/main.js"%}""></script>
+</body>
+
+</html>

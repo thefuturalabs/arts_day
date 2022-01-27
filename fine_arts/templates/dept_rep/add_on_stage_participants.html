@@ -1,0 +1,91 @@
+<html lang="en">
+    {% extends 'dept_rep/base.html' %}
+<head>
+    
+</head>
+<body>
+    {% block content %}
+    <section id="contact" class="section-bg wow fadeInUp">
+
+        <div class="container">
+  
+          <div class="section-header">
+            <h2>Add on Stage Participants</h2>
+            <p>You can add  the participants for the event  here.</p>
+          </div>
+          <div >
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li >
+                            <div style=" font-size:25px; color:red;">
+        
+                                <h2>{{ message }}</h2>
+                                
+
+
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+  
+          
+  
+          <div class="form">
+            
+            <form action="" method="POST" role="form" class="contactForm" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" name="participant_name" class="form-control"  placeholder="Enter Participant Name" required />
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  <select class="form-control" name="group" id="" required>
+                    <option value="">Select Group</option>
+                    <option value="group1">Group1</option>
+                    <option value="group2">Group2</option>
+                    <option value="group3">Group3</option>
+                    <option value="group4">Group4</option>
+                    <option value="group5">Group5</option>
+                    <option value="group6">Group6</option>
+                    
+                    
+                  </select>
+                  
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" name="registration_number" class="form-control"  placeholder="Enter University Roll Number" required />
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  <select class="form-control" name="event" id="" required>
+                    <option value="">Select Event</option>
+                  {% for x in on_stage_items %}
+                  <option value="{{x.event_name}}">{{x.event_name}}</option>
+                  {% endfor %}
+                    
+                    
+                  </select>
+                  
+                </div>
+              </div>
+              
+              
+              
+              
+              <div class="text-center"><button type="submit">Add Participant</button></div>
+            </form>
+          </div>
+  
+        </div>
+      </section><!-- #contact -->
+
+      {% endblock %}
+    
+</body>
+</html>

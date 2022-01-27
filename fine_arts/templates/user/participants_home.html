@@ -1,0 +1,147 @@
+<html lang="en">
+    {% extends 'user/base.html' %}
+<head>
+    
+</head>
+<body>
+    {% block content %}
+    <section id="contact" class="section-bg wow fadeInUp">
+
+        <div class="container">
+  
+          <div class="section-header">
+            <h2>View Schedule</h2>
+            <p>You can view the schedule here</p>
+          </div>
+  
+          
+  
+          <div class="form">
+            
+            <form action="" method="POST" role="form" class="contactForm" >
+              {% csrf_token %}
+
+              <div class="form-group">
+                
+                
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label >Name</label>
+                  <input type="text" class="form-control" name="name"  placeholder="Enter  Name"  required />
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  
+                  <label >Event Application Number</label>
+                  <input type="text" class="form-control" name="app_number"  placeholder="Enter Application number"  required />
+                </div>
+              </div>
+
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <select class="form-control" name="event" id="" required>
+                    <option value="">Select Event</option>
+                    {% for x in off_stage_details %}
+                    <option value="{{x.event_name}}">{{x.event_name}}</option>
+                    {% endfor %}
+                    {% for y in on_stage_details %}
+                    <option value="{{y.event_name}}">{{y.event_name}}</option>
+                    {% endfor %}
+                    
+                    
+                  </select>
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  <select class="form-control" name="group" id="" required>
+                    <option value="">Select Group</option>
+                    <option value="group1">Group 1</option>
+                    <option value="group2">Group 2</option>
+                    <option value="group3">Group 3</option>
+                    <option value="group4">Group 4</option>
+                    <option value="group5">Group 5</option>
+                    <option value="group6">Group 6</option>
+                    
+                    
+                  </select>
+                  
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              <div class="text-center"><button type="submit">View Details</button></div>
+            </form>
+          </div>
+
+          <div >
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li >
+                            <div style=" font-size:25px;">
+        
+                                <h2>{{ message }}</h2>
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                        
+                                        
+                                        <th>Event  Name</th>
+                                        <th>Day</th>
+                                        <th>Reporting Time</th>
+                                        <th>Venue</th>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                          
+                                  
+                                   <tr>
+                                    
+                                       
+                                       <td>{{event_details.event_name}}</td>
+                                       <td>{{event_details.day}}</td>
+                                       <td>{{event_details.event_start_time}}</td>
+
+                                    
+                                       <td>{{location}}</td>
+                                       
+                                       
+                                       
+                                   </tr>
+                                  
+                                  
+                                  
+                                 
+                                   
+                                  
+                               </tbody>
+                                
+                                </table>
+
+
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+  
+        </div>
+      </section><!-- #contact -->
+
+      {% endblock %}
+    
+</body>
+</html>

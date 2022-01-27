@@ -1,0 +1,118 @@
+<html lang="en">
+    {% extends 'user/base.html' %}
+<head>
+    
+</head>
+<body>
+
+    {% block content %}
+
+    <section id="schedule" class="section-with-bg">
+        <div class="container wow fadeInUp">
+          <div class="section-header">
+            <h2>Program Results</h2>
+            <p>The results of programs</p>
+          </div>
+  
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Off Stage Results </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">On stage Results</a>
+            </li>
+            
+          </ul>
+  
+          
+  
+          <div class="tab-content row justify-content-center">
+  
+            <!-- Schdule Day 1 -->
+            <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+              {% for x in off_stage_results %}
+              <div class="row schedule-item">
+                <div class="col-md-2">
+                  <p><time>{{x.group}}</time></p>
+                  <p><h4>{{x.position}}</h4></p> 
+                </div>
+                <div class="col-md-10">
+                  
+                  <h4>{{x.name}}. </h4>
+                  
+                  <p>{{x.event}}</p>
+                </div>
+              </div>
+  
+              {% endfor %}
+  
+              
+  
+              
+  
+              
+  
+              
+  
+              
+  
+              
+  
+              
+  
+              
+              
+  
+            </div>
+            <!-- End Schdule Day 1 -->
+  
+            <!-- Schdule Day 2 -->
+            <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+  
+              {% for x in on_stage_results %}
+              <div class="row schedule-item">
+                <div class="col-md-2">
+                  <p><time>{{x.group}}</time></p>
+                  <p><h4>{{x.position}}</h4></p> 
+                </div>
+                <div class="col-md-10">
+                  
+                  <h4>{{x.name}}. </h4>
+                  
+                  <p>{{x.event}}</p>
+                </div>
+              </div>
+  
+              {% endfor %}
+  
+              
+  
+              
+  
+              
+              
+  
+              
+  
+              
+  
+              
+  
+              
+  
+            </div>
+            <!-- End Schdule Day 2 -->
+  
+            
+            
+  
+          </div>
+  
+        </div>
+  
+      </section>
+
+    {% endblock %}
+    
+</body>
+</html>
