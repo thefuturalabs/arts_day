@@ -26,9 +26,9 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = '#x%95_ox*dt7@x6_r*6$j66^4v&#$x2+f9%&$rjr*f@x-z=vlu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','artsday.com']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
