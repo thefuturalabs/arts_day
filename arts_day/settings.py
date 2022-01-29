@@ -28,7 +28,7 @@ SECRET_KEY = '#x%95_ox*dt7@x6_r*6$j66^4v&#$x2+f9%&$rjr*f@x-z=vlu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','artsday.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
